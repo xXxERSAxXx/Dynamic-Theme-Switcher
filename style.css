@@ -1,0 +1,102 @@
+/* Define CSS Custom properties (Variables) */
+:root {
+    /* default (ligth) theme */
+    --background-color: #f0f0f0;
+    --text-color: #333;
+    --primary-color: #007bff; /* for buttons or highlights */
+    --button-bg: #007bff;
+    --button-text: white;
+
+}
+
+/* Dark theme  variables (will be applied via js) */
+body.dark-theme {
+    --background-color: #333;
+    --text-color: #f0f0f0;
+    --primary-color: #bb86fc; /* for buttons or highlights */
+    --button-bg: #bb86fc;
+    --button-text: #333;
+}
+
+/* blue theme variables (will be applied via js) */
+body.blue-theme {
+    --background-color: #e0f2f7;
+    --text-color: #1a237e;
+    --primary-color: #2196f3; /* for buttons or highlights */
+    --button-bg: #2196f3;
+    --button-text: white;
+}
+
+/* green theme variables (will be applied via js) */
+body.green-theme {
+    --background-color: #e8f5e9;
+    --text-color: #1b5e20;
+    --primary-color: #4caf50; /* for buttons or highlights */
+    --button-bg: #4caf50;
+    --button-text: white;
+}
+
+/* general body styles */
+body {
+    font-family: Arial, san-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease; /* smooth transitions */
+    background-color: var(--background-color); /* use the css variable */
+    color: var(--text-color); /* use the css variable */
+}
+
+.container {
+    background-color: white; /* this will stay white, or can make it variable;*/
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    box-sizing: border-box;/* include padding in width */
+
+}
+
+h1 {
+    color: var(--primary-color); /* use the css variable */
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.36 ease, color 0,3s ease;
+    background-color: var(--button-bg); /* use button-specific variables */
+    color: var(--button-text);
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* color options buttons */
+.color-options {
+    margin-top: 20px;
+}
+.color-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px;
+    border: 2px solid transparent; /* default border */
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.color-btn[data-color="default"] {background-color: #f0f0f0; border-color: #ccc;}
+.color-btn[data-color="blue"] {background-color: #2196f3; }
+.color-btn[data-color="greem"] {background-color: #4caf50; }
+
+.color-btn:hover {
+    border-color: var(--text-color); /* highlight border on hover */}
